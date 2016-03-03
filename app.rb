@@ -14,6 +14,4 @@ end
 
 error do |exception|
   Notifier.trigger_sms_alerts(exception)
-
-  "sinatra error handler"
 end
