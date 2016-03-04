@@ -4,11 +4,11 @@ source "https://rubygems.org"
 # gem "rails"
 
 gem 'sinatra'
-gem 'rspec'
 gem 'twilio-ruby'
 
 group :test, :development do
   gem 'rspec'
+  gem 'capybara'
 end
 
 group :test do
