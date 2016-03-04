@@ -2,16 +2,16 @@
 
 [![Build Status](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra.svg?branch=master)](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra)
 
-Use Twilio to send SMS alerts so that you never miss a critical issue.
+Use Twilio to send SMS alerts so that way you never miss a critical issue.
 
 ## Run the application
 
 1. Clone the repository and `cd` into it.
 
    ```bash
-   $ git clone git@github.com:TwilioDevEd/eta-notifications-node.git
+   $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
 
-   $ cd eta-notifications-node
+   $ cd  server-notifications-sinatra
    ```
 
 1. Install the application dependencies
@@ -28,7 +28,7 @@ Use Twilio to send SMS alerts so that you never miss a critical issue.
     export TWILIO_NUMBER=your-twilio-number
     ```
 
-  You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
+  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
   [Twilio Account Settings](https://www.twilio.com/user/account/settings).
 
 1. Start the development server
