@@ -23,10 +23,8 @@ module Notifier
       :from => twilio_number,
       :to => phone_number,
       :body => alert_message,
-      # US phone numbers can make use of an image as well.
-      # :media_url => image_url
     )
-    puts "An SMS notitying fot the last application error was"\
+    puts "An SMS notitying the last application error was "\
          "sent to #{message.to[0...-4] + "****"}"
   end
 
