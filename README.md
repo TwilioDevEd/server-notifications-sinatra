@@ -23,9 +23,9 @@ Use Twilio to send SMS alerts so that you never miss a critical issue.
 1. Export environment variables
 
     ```bash
-    export TWILIO_ACCOUNT_SID=your account sid
-    export TWILIO_AUTH_TOKEN=your auth token
-    export TWILIO_NUMBER=your twilio number
+    export TWILIO_ACCOUNT_SID=your-account-sid
+    export TWILIO_AUTH_TOKEN=your-auth-token
+    export TWILIO_NUMBER=your-twilio-number
     ```
 
   You can find your `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
