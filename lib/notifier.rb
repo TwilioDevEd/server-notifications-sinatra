@@ -19,7 +19,6 @@ module Notifier
 
   def self.send_message(client, phone_number, alert_message, image_url)
     twilio_number = ENV['TWILIO_NUMBER']
-    puts phone_number
     message = client.account.messages.create(
       :from => twilio_number,
       :to => phone_number,
@@ -27,7 +26,8 @@ module Notifier
       # US phone numbers can make use of an image as well.
       # :media_url => image_url
     )
-    puts message.to
+    puts "An SMS notitying fot the last application error was"\
+         "sent to #{message.to[0...-4] + "****"}"
   end
 
   private_class_method :send_message
