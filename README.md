@@ -6,7 +6,7 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
 
 ## Run the application
 
-1. Clone the repository and `cd` into it.
+1. Clone the repository and `cd` into it
 
    ```bash
    $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
@@ -28,7 +28,7 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
     export TWILIO_NUMBER=your-twilio-number
     ```
 
-  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
+  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` on your
   [Twilio Account Settings](https://www.twilio.com/user/account/settings).
 
 1. Start the development server
