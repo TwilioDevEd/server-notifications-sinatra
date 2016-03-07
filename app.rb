@@ -17,7 +17,7 @@ module ServerNotifications
     end
 
     error do |exception|
-      Notifier.trigger_sms_alerts(exception)
+      Notifier.send_sms_notifications(exception)
       'An error has ocurred'
     end
   end

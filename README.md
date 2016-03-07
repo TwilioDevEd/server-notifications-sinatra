@@ -10,7 +10,6 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
 
    ```bash
    $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
-
    $ cd  server-notifications-sinatra
    ```
 
@@ -23,9 +22,9 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
 1. Export environment variables
 
     ```bash
-    export TWILIO_ACCOUNT_SID=your-account-sid
-    export TWILIO_AUTH_TOKEN=your-auth-token
-    export TWILIO_NUMBER=your-twilio-number
+    $ export TWILIO_ACCOUNT_SID=your-account-sid
+    $ export TWILIO_AUTH_TOKEN=your-auth-token
+    $ export TWILIO_NUMBER=your-twilio-number
     ```
 
   You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
@@ -34,7 +33,7 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
 1. Start the development server
 
     ```bash
-    $ rakeup
+    $ bundle exec rakeup
     ```
 
 1. Check it out at [`http://localhost:9292`](http://localhost:9292)

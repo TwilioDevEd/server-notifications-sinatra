@@ -2,7 +2,7 @@ require 'yaml'
 require 'twilio-ruby'
 
 module Notifier
-  def self.trigger_sms_alerts(e)
+  def self.send_sms_notifications(e)
     alert_message = "[This is a test] ALERT!"\
       "It appears the server is having issues."\
       "Exception: #{e}."\
@@ -13,20 +13,21 @@ module Notifier
     admin_list = YAML.load_file('config/administrators.yml')
     admin_list.each do |admin|
       phone_number = admin['phone_number']
-      send_message(client, phone_number, alert_message, image_url)
+      send_sms(client, phone_number, alert_message, image_url)
     end
   end
 
-  def self.send_message(client, phone_number, alert_message, image_url)
+  def self.send_sms(client, phone_number, alert_message, image_url)
     twilio_number = ENV['TWILIO_NUMBER']
     message = client.account.messages.create(
-      :from => twilio_number,
-      :to => phone_number,
-      :body => alert_message,
+      from: twilio_number,
+      to: phone_number,
+      body: alert_message,
+      media_url: image_url
     )
-    puts "An SMS notitying the last application error was "\
+    puts "An SMS notifying the last application error was "\
          "sent to #{message.to[0...-4] + "****"}"
   end
 
-  private_class_method :send_message
+  private_class_method :send_sms
 end
