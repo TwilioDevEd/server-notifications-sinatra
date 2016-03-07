@@ -12,8 +12,8 @@
 }</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Server Notifications &amp; Alerts"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Server Notifications &amp; Alerts</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Never miss another server outage. Learn how to build a server notification system that will alert all administrators via SMS when a server outage occurs.</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Server Notifications and Alerts" class="chapter"><div data-file="app.rb" class="step"><h2 id="what-does-this-thing-do-">What does this thing do?</h2>
 <p>This <a href="//www.sinatrarb.com/">Sinatra</a> sample application
 demonstrates how to send SMS alerts to a list of system
-administrators if something goes wrong on your server. In this
-tutorial, we&#39;ll show you the key bits of code to make this work.
+administrators if something goes wrong on your server. On this
+tutorial we&#39;ll show you the key bits of code to make this work.
 Head to the <a href="https://github.com/TwilioDevEd/server-notifications-sinatra">application&#39;s
 README.md</a>
 to see how to run the application locally.</p>
@@ -25,8 +25,7 @@ to see how to run the application locally.</p>
 <li><a href="//www.twilio.com/docs/ruby/install">Twilio-Ruby library</a></li>
 </ul>
 </div><div data-file="lib/notifier.rb" data-highlight="11" class="step"><h2 id="configure-twilio-client">Configure Twilio client</h2>
-<p>In order to send messages we&#39;ll need to create a Twilio REST
-client which
+<p>In order to send messages we&#39;ll need to create a Twilio REST client which
 requires reading variables <code>TWILIO_ACCOUNT_SID</code>, <code>TWILIO_NUMBER</code>
 <code>TWILIO_AUTH_TOKEN</code> from our enviroment .</p>
 <hr>
@@ -40,21 +39,19 @@ requires reading variables <code>TWILIO_ACCOUNT_SID</code>, <code>TWILIO_NUMBER<
 server error occurs.  The only essential piece of data we need is a
 <code>phone_number</code> for each administrator.</p>
 </div><div data-file="app.rb" data-highlight="60-62" class="step"><h2 id="handle-all-the-exceptions-in-the-application">Handle all the exceptions in the application</h2>
-<p>Here we implement error handling and message delivery using 
-<a href="//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md">Sinatra Errors Handlers</a>. 
-Also, we&#39;ll make all the Twilio API calls from here.</p>
+<p>Here we implement error handling and message delivery using
+<a href="//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md">Sinatra Errors Handlers</a>.
+We will also make all the Twilio API calls from here.</p>
 <hr>
 </div><div data-file="lib/notifier.rb" data-highlight="13-17" class="step"><h2 id="trigger-notifications-for-administrator-list">Trigger notifications for administrator list</h2>
 <p>In our <code>Notifier</code> module, we read the admins from our YAML file
-and send alert messages to each of them with the <code>sendSms</code> method in 
+and send alert messages to each one of them with the <code>sendSms</code> method in
 <code>twilioClient</code>.</p>
 </div><div data-file="lib/notifier.rb" data-highlight="20-29" class="step"><h2 id="send-a-text-message">Send a text message</h2>
 <p>There are the three parameters needed to <a href="//www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest">send an
 SMS</a>
-using the <a href="https://www.twilio.com/docs/api/rest">Twilio REST
-API</a>: <code>From</code>, <code>To</code>, and
-<code>Body</code>. <a href="https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada">US and Canadian phone
-numbers</a>
+using the <a href="https://www.twilio.com/docs/api/rest">Twilio REST API</a>: <code>From</code>, <code>To</code>, and
+<code>Body</code>. <a href="https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada">US and Canadian phone numbers</a>
 can also send an image with the message.</p>
 <hr>
 <p><strong>See Also:</strong></p>
@@ -63,7 +60,7 @@ can also send an image with the message.</p>
 <li><a href="https://www.twilio.com/user/account/log/messages">Your message logs in the account portal</a></li>
 </ul>
 </div><div class="step"><h2 id="where-to-next-">Where to next?</h2>
-<p>That&#39;s it! We&#39;ve just implemented an automated server notification system 
+<p>That&#39;s it! We&#39;ve just implemented an automated server notification system
 that can send you server alerts if anything goes wrong. If you&#39;re a Ruby
 developer working with Twilio, you might want to check out these other
 tutorials.</p>

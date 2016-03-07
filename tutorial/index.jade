@@ -5,8 +5,8 @@
 
       This [Sinatra](//www.sinatrarb.com/) sample application
       demonstrates how to send SMS alerts to a list of system
-      administrators if something goes wrong on your server. In this
-      tutorial, we'll show you the key bits of code to make this work.
+      administrators if something goes wrong on your server. On this
+      tutorial we'll show you the key bits of code to make this work.
       Head to the [application's
       README.md](https://github.com/TwilioDevEd/server-notifications-sinatra)
       to see how to run the application locally.
@@ -24,11 +24,10 @@
     :markdown
       ## Configure Twilio client
 
-      In order to send messages we'll need to create a Twilio REST
-      client which
+      In order to send messages we'll need to create a Twilio REST client which
       requires reading variables `TWILIO_ACCOUNT_SID`, `TWILIO_NUMBER`
       `TWILIO_AUTH_TOKEN` from our enviroment .
-      
+
       ---
 
       **See Also:**
@@ -43,14 +42,14 @@
       Here we create a list of administrators who should be notified if a
       server error occurs.  The only essential piece of data we need is a
       `phone_number` for each administrator.
-      
+
   .step(data-file='app.rb', data-highlight='60-62')
     :markdown
       ## Handle all the exceptions in the application
 
-      Here we implement error handling and message delivery using 
-      [Sinatra Errors Handlers](//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md). 
-      Also, we'll make all the Twilio API calls from here.
+      Here we implement error handling and message delivery using
+      [Sinatra Errors Handlers](//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md).
+      We will also make all the Twilio API calls from here.
 
       ---
 
@@ -59,7 +58,7 @@
       ## Trigger notifications for administrator list
 
       In our `Notifier` module, we read the admins from our YAML file
-      and send alert messages to each of them with the `sendSms` method in 
+      and send alert messages to each one of them with the `sendSms` method in
       `twilioClient`.
 
 
@@ -69,10 +68,8 @@
 
       There are the three parameters needed to [send an
       SMS](//www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest)
-      using the [Twilio REST
-      API](https://www.twilio.com/docs/api/rest): `From`, `To`, and
-      `Body`. [US and Canadian phone
-      numbers](https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada)
+      using the [Twilio REST API](https://www.twilio.com/docs/api/rest): `From`, `To`, and
+      `Body`. [US and Canadian phone numbers](https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada)
       can also send an image with the message.
 
       ---
@@ -85,7 +82,7 @@
     :markdown
       ## Where to next?
 
-      That's it! We've just implemented an automated server notification system 
+      That's it! We've just implemented an automated server notification system
       that can send you server alerts if anything goes wrong. If you're a Ruby
       developer working with Twilio, you might want to check out these other
       tutorials.
