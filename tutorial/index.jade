@@ -26,7 +26,7 @@
 
       In order to send messages we'll need to create a Twilio REST client which
       requires reading variables `TWILIO_ACCOUNT_SID`, `TWILIO_NUMBER`
-      `TWILIO_AUTH_TOKEN` from our enviroment .
+      `TWILIO_AUTH_TOKEN` from our enviroment.
 
       ---
 
@@ -43,7 +43,7 @@
       server error occurs.  The only essential piece of data we need is a
       `phone_number` for each administrator.
 
-  .step(data-file='app.rb', data-highlight='60-62')
+  .step(data-file='app.rb', data-highlight='19-22')
     :markdown
       ## Handle all the exceptions in the application
 
@@ -62,7 +62,7 @@
       `twilioClient`.
 
 
-  .step(data-file='lib/notifier.rb', data-highlight='20-29')
+  .step(data-file='lib/notifier.rb', data-highlight='20-30')
     :markdown
       ## Send a text message
 
