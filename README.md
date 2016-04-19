@@ -30,6 +30,8 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
   You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` on your
   [Twilio Account Settings](https://www.twilio.com/user/account/settings).
 
+1. Edit the administrators listed in the [config file](config/administrators.yml). _This will break the app if you don't use real phone numbers!_
+
 1. Start the development server
 
     ```bash
