@@ -4,6 +4,12 @@
 
 Use Twilio to send SMS alerts so that way you never miss a critical issue.
 
+## Deploy to Heroku
+
+Hit the button!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Run the application
 
 1. Clone the repository and `cd` into it
