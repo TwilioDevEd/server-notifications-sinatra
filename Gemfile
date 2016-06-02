@@ -1,10 +1,9 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
-
 gem 'sinatra'
 gem 'twilio-ruby'
+gem 'jwt', '<=1.2'
 
 group :test, :development do
   gem 'rspec'

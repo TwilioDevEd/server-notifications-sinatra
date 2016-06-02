@@ -4,9 +4,15 @@
 
 Use Twilio to send SMS alerts so that way you never miss a critical issue.
 
+## Deploy to Heroku
+
+Hit the button!
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
 ## Run the application
 
-1. Clone the repository and `cd` into it.
+1. Clone the repository and `cd` into it
 
    ```bash
    $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
@@ -27,8 +33,10 @@ Use Twilio to send SMS alerts so that way you never miss a critical issue.
     $ export TWILIO_NUMBER=your-twilio-number
     ```
 
-  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` in your
+  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` on your
   [Twilio Account Settings](https://www.twilio.com/user/account/settings).
+
+1. Edit the administrators listed in the [config file](config/administrators.yml). _This will break the app if you don't use real phone numbers!_
 
 1. Start the development server
 
