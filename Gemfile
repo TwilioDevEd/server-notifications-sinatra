@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem 'sinatra'
-gem 'twilio-ruby'
+gem 'twilio-ruby', '~> 5.0.0.rc17'
 gem 'jwt', '<=1.2'
 
 group :test, :development do
