@@ -1,63 +1,59 @@
+<a href="https://www.twilio.com">
+  <img src="https://static0.twilio.com/marketing/bundles/marketing/img/logos/wordmark-red.svg" alt="Twilio" width="250" />
+</a>
+
 # Server notifications with Twilio, Ruby and Sinatra
 
 [![Build Status](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra.svg?branch=master)](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra)
 
-Use Twilio to send SMS alerts so that way you never miss a critical issue.
+SMS notifications are a great way to alert humans quickly when important events
+happen. In this example, we'll show you how to send SMS notifications to a list
+of people when an error happens in a web application.
 
-## Deploy to Heroku
+[Read the full tutorial here!](https://www.twilio.com/docs/tutorials/walkthrough/server-notifications/ruby/sinatra)
 
-Hit the button!
+## Local development
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
 
-## Run the application
-
-1. Clone the repository and `cd` into it
+1. First clone this repository and `cd` into it.
 
    ```bash
    $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
    $ cd  server-notifications-sinatra
    ```
 
-1. Install the application dependencies
+1. Install the dependencies.
 
-    ```bash
-    $ bundle install
-    ```
+   ```bash
+   $ bundle install
+   ```
 
-1. Export environment variables
+1. Copy the `.env.example` file to `.env`, and edit it including your credentials
+   for the Twilio API (found at https://www.twilio.com/console/account/settings).
+   You will also need a [Twilio Number](https://www.twilio.com/console/phone-numbers/incoming).
 
-    ```bash
-    $ export TWILIO_ACCOUNT_SID=your-account-sid
-    $ export TWILIO_AUTH_TOKEN=your-auth-token
-    $ export TWILIO_NUMBER=your-twilio-number
-    ```
+   Run `source .env` to export the environment variables.
 
-  You can find `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN` on your
-  [Twilio Account Settings](https://www.twilio.com/user/account/settings).
+1. Edit the administrators listed in the [`config/administrators.yml`](config/administrators.yml).
+   Make sure to use real phone numbers otherwise the application won't work.
 
-1. Edit the administrators listed in the [config file](config/administrators.yml). _This will break the app if you don't use real phone numbers!_
+1. Make sure the tests succeed.
 
-1. Start the development server
+   ```bash
+   $ bundle exec rake
+   ```
 
-    ```bash
-    $ bundle exec rakeup
-    ```
+1. Start the development server:
 
-1. Check it out at [`http://localhost:9292`](http://localhost:9292)
+   ```
+   $ bundle exec rakeup
+   ```
 
-That's it!
-
-## Run the tests
-
-1. Run tests
-
-    ```bash
-    $ bundle exec rake
-    ```
+1. Check it out at [`http://localhost:9292`](http://localhost:9292).
 
 ## Meta
 
-* No warranty expressed or implied. Software is as is. Diggity.
+* No warranty expressed or implied.  Software is as is. Diggity.
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
