@@ -1,7 +1,7 @@
 .chapter(data-title='Server Notifications and Alerts')
   .step(data-file='app.rb')
     :markdown
-      ## What does this thing do?
+      ## What Does This Thing Do?
 
       This [Sinatra](//www.sinatrarb.com/) sample application
       demonstrates how to send SMS alerts to a list of system
@@ -16,28 +16,28 @@
       ---
 
       **See Also:**
-      * [Getting started with Sinatra](http://www.sinatrarb.com/intro.html)
-      * [Twilio-Ruby library](//www.twilio.com/docs/ruby/install)
+      * [Getting Started with Sinatra](http://www.sinatrarb.com/intro.html)
+      * [The Twilio Ruby Helper Library](//www.twilio.com/docs/ruby/install)
 
 
   .step(data-file='lib/notifier.rb', data-highlight='11')
     :markdown
-      ## Configure Twilio client
+      ## Configure Twilio Client
 
-      In order to send messages we'll need to create a Twilio REST client which
-      requires reading variables `TWILIO_ACCOUNT_SID`, `TWILIO_NUMBER`
-      `TWILIO_AUTH_TOKEN` from our enviroment.
+      To send messages we'll need to create a Twilio REST client which requires
+      reading the environment variables `TWILIO_ACCOUNT_SID` and `TWILIO_AUTH_TOKEN`
+      from our enviroment.
 
       ---
 
       **See Also:**
-      * [Twilio-Node Quickstart](//www.twilio.com/docs/quickstart/ruby/client)
-      * [Twilio REST Web Service Interface](//www.twilio.com/docs/api/rest)
+      * [Twilio SMS and MMS Ruby Quickstart](//www.twilio.com/docs/quickstart/ruby/sms)
+      * [Twilio REST API](//www.twilio.com/docs/api/rest)
 
 
   .step(data-file='config/administrators.yml')
     :markdown
-      ## List server admins
+      ## List Server Admins
 
       Here we create a list of administrators who should be notified if a
       server error occurs.  The only essential piece of data we need is a
@@ -45,7 +45,7 @@
 
   .step(data-file='app.rb', data-highlight='19-22')
     :markdown
-      ## Handle all the exceptions in the application
+      ## Handle All the Exceptions in the Application
 
       Here we implement error handling and message delivery using
       [Sinatra Errors Handlers](//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md).
@@ -53,32 +53,30 @@
 
   .step(data-file='lib/notifier.rb', data-highlight='13-17')
     :markdown
-      ## Trigger notifications for administrator list
+      ## Trigger Notifications for Administrators List
 
-      In our `Notifier` module, we read the admins from our YAML file
-      and send alert messages to each one of them with the `sendSms` method in
-      `twilioClient`.
-
+      In our `Notifier` module, we read the administrators from our YAML file
+      and send alert messages to each one of them with the method `send_sms`.
 
   .step(data-file='lib/notifier.rb', data-highlight='20-30')
     :markdown
-      ## Send a text message
+      ## Send a Text Message
 
       There are the three parameters needed to [send an
       SMS](//www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest)
-      using the [Twilio REST API](https://www.twilio.com/docs/api/rest): `From`, `To`, and
-      `Body`. [US and Canadian phone numbers](https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada)
+      using the [Twilio REST API](https://www.twilio.com/docs/api/rest): `from`, `to`, and
+      `body`. [US and Canadian phone numbers](https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada)
       can also send an image with the message.
 
       ---
 
       **See Also:**
-      * [REST API Docs for Message resource](https://www.twilio.com/docs/api/rest/message)
-      * [Your message logs in the account portal](https://www.twilio.com/user/account/log/messages)
+      * [REST API: Messages](//www.twilio.com/docs/api/rest/message)
+      * [Programmable SMS Logs](//www.twilio.com/console/sms/logs)
 
   .step
     :markdown
-      ## Where to next?
+      ## Where to Next?
 
       That's it! We've just implemented an automated server notification system
       that can send you server alerts if anything goes wrong. If you're a Ruby
@@ -95,8 +93,8 @@
       SMS and MMS messages are a personal way to engage with users, offering
       a much higher open rate than e-mail and more impact than a tweet.
 
-      ### Did this help?
+      ### Did this Help?
 
-      Thanks for checking out this tutorial! If you have any feedback
-      to share with us, we'd love to hear it.
-      [Contact support](//www.twilio.com/help/contact) to let us know what you think.
+      Thanks for checking out this tutorial! If you have any feedback to share with
+      us, we'd love to hear it. [Contact the Twilio Developer Education
+      Team](mailto:deved-oss@twilio.com) to let us know what you think.

@@ -9,7 +9,7 @@
 .wrapper {
   height:100%;
   width:100%;
-}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Server Notifications &amp; Alerts"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Server Notifications &amp; Alerts</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Never miss another server outage. Learn how to build a server notification system that will alert all administrators via SMS when a server outage occurs.</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Server Notifications and Alerts" class="chapter"><div data-file="app.rb" class="step"><h2 id="what-does-this-thing-do-">What does this thing do?</h2>
+}</style><link rel="shortcut icon" href="//twilio.com/bundles/marketing/img/favicons/favicon.ico"><link rel="apple-touch-icon" href="//twilio.com/bundles/marketing/img/favicons/favicon_57.png"><link rel="apple-touch-icon" sizes="72x72" href="//twilio.com/bundles/marketing/img/favicons/favicon_72.png"><link rel="apple-touch-icon" sizes="114x114" href="//twilio.com/bundles/marketing/img/favicons/favicon_114.png"><link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet" href="viewsaurus.css"></head><body><div class="wrapper"><div id="viewsaurus" data-title="Server Notifications &amp; Alerts"><div class="saurus-panes"><div class="saurus-prose"><div class="saurus-prose-header"><div class="title-outer"><span class="step-title">Server Notifications &amp; Alerts</span></div></div><div class="saurus-nav-buttons"><div class="saurus-nav-button nav-overview"><div class="saurus-nav-button-inner"><i class="fa fa-fw fa-list"></i></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-previous"><div class="saurus-nav-button-inner"><a href=""> <i class="fa fa-fw fa-play fa-rotate-180"></i></a></div><div class="nav-divider"></div></div><div class="saurus-nav-button nav-next clickable"><div class="saurus-nav-button-inner"><a href="#1"> <i class="fa fa-fw fa-play"></i></a></div></div><div class="saurus-next-title"><span class="next-title-inner"></span></div></div><div class="saurus-progress-bar"></div><div class="saurus-start"><p>Never miss another server outage. Learn how to build a server notification system that will alert all administrators via SMS when a server outage occurs.</p><a href="#0">Start Tutorial</a></div><div class="saurus-content"><div data-title="Server Notifications and Alerts" class="chapter"><div data-file="app.rb" class="step"><h2 id="what-does-this-thing-do-">What Does This Thing Do?</h2>
 <p>This <a href="//www.sinatrarb.com/">Sinatra</a> sample application
 demonstrates how to send SMS alerts to a list of system
 administrators if something goes wrong on your server. On this
@@ -21,45 +21,43 @@ to see how to run the application locally.</p>
 <hr>
 <p><strong>See Also:</strong></p>
 <ul>
-<li><a href="http://www.sinatrarb.com/intro.html">Getting started with Sinatra</a></li>
-<li><a href="//www.twilio.com/docs/ruby/install">Twilio-Ruby library</a></li>
+<li><a href="http://www.sinatrarb.com/intro.html">Getting Started with Sinatra</a></li>
+<li><a href="//www.twilio.com/docs/ruby/install">The Twilio Ruby Helper Library</a></li>
 </ul>
-</div><div data-file="lib/notifier.rb" data-highlight="11" class="step"><h2 id="configure-twilio-client">Configure Twilio client</h2>
-<p>In order to send messages we&#39;ll need to create a Twilio REST client which
-requires reading variables <code>TWILIO_ACCOUNT_SID</code>, <code>TWILIO_NUMBER</code>
-<code>TWILIO_AUTH_TOKEN</code> from our enviroment.</p>
+</div><div data-file="lib/notifier.rb" data-highlight="11" class="step"><h2 id="configure-twilio-client">Configure Twilio Client</h2>
+<p>To send messages we&#39;ll need to create a Twilio REST client which requires
+reading the environment variables <code>TWILIO_ACCOUNT_SID</code> and <code>TWILIO_AUTH_TOKEN</code>
+from our enviroment.</p>
 <hr>
 <p><strong>See Also:</strong></p>
 <ul>
-<li><a href="//www.twilio.com/docs/quickstart/ruby/client">Twilio-Node Quickstart</a></li>
-<li><a href="//www.twilio.com/docs/api/rest">Twilio REST Web Service Interface</a></li>
+<li><a href="//www.twilio.com/docs/quickstart/ruby/sms">Twilio SMS and MMS Ruby Quickstart</a></li>
+<li><a href="//www.twilio.com/docs/api/rest">Twilio REST API</a></li>
 </ul>
-</div><div data-file="config/administrators.yml" class="step"><h2 id="list-server-admins">List server admins</h2>
+</div><div data-file="config/administrators.yml" class="step"><h2 id="list-server-admins">List Server Admins</h2>
 <p>Here we create a list of administrators who should be notified if a
 server error occurs.  The only essential piece of data we need is a
 <code>phone_number</code> for each administrator.</p>
-</div><div data-file="app.rb" data-highlight="19-22" class="step"><h2 id="handle-all-the-exceptions-in-the-application">Handle all the exceptions in the application</h2>
+</div><div data-file="app.rb" data-highlight="19-22" class="step"><h2 id="handle-all-the-exceptions-in-the-application">Handle All the Exceptions in the Application</h2>
 <p>Here we implement error handling and message delivery using
 <a href="//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md">Sinatra Errors Handlers</a>.
 We will also make all the Twilio API calls from here.</p>
-<hr>
-</div><div data-file="lib/notifier.rb" data-highlight="13-17" class="step"><h2 id="trigger-notifications-for-administrator-list">Trigger notifications for administrator list</h2>
-<p>In our <code>Notifier</code> module, we read the admins from our YAML file
-and send alert messages to each one of them with the <code>sendSms</code> method in
-<code>twilioClient</code>.</p>
-</div><div data-file="lib/notifier.rb" data-highlight="20-30" class="step"><h2 id="send-a-text-message">Send a text message</h2>
+</div><div data-file="lib/notifier.rb" data-highlight="13-17" class="step"><h2 id="trigger-notifications-for-administrators-list">Trigger Notifications for Administrators List</h2>
+<p>In our <code>Notifier</code> module, we read the administrators from our YAML file
+and send alert messages to each one of them with the method <code>send_sms</code>.</p>
+</div><div data-file="lib/notifier.rb" data-highlight="20-30" class="step"><h2 id="send-a-text-message">Send a Text Message</h2>
 <p>There are the three parameters needed to <a href="//www.twilio.com/docs/quickstart/ruby/sms/sending-via-rest">send an
 SMS</a>
-using the <a href="https://www.twilio.com/docs/api/rest">Twilio REST API</a>: <code>From</code>, <code>To</code>, and
-<code>Body</code>. <a href="https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada">US and Canadian phone numbers</a>
+using the <a href="https://www.twilio.com/docs/api/rest">Twilio REST API</a>: <code>from</code>, <code>to</code>, and
+<code>body</code>. <a href="https://www.twilio.com/help/faq/sms/is-mms-supported-for-all-carriers-in-us-and-canada">US and Canadian phone numbers</a>
 can also send an image with the message.</p>
 <hr>
 <p><strong>See Also:</strong></p>
 <ul>
-<li><a href="https://www.twilio.com/docs/api/rest/message">REST API Docs for Message resource</a></li>
-<li><a href="https://www.twilio.com/user/account/log/messages">Your message logs in the account portal</a></li>
+<li><a href="//www.twilio.com/docs/api/rest/message">REST API: Messages</a></li>
+<li><a href="//www.twilio.com/console/sms/logs">Programmable SMS Logs</a></li>
 </ul>
-</div><div class="step"><h2 id="where-to-next-">Where to next?</h2>
+</div><div class="step"><h2 id="where-to-next-">Where to Next?</h2>
 <p>That&#39;s it! We&#39;ve just implemented an automated server notification system
 that can send you server alerts if anything goes wrong. If you&#39;re a Ruby
 developer working with Twilio, you might want to check out these other
@@ -70,13 +68,13 @@ phone in addition to their password.</p>
 <p><a href="https://www.twilio.com/docs/howto/walkthrough/marketing-notifications/ruby/rails"><strong>SMS and MMS marketing notifications</strong></a></p>
 <p>SMS and MMS messages are a personal way to engage with users, offering
 a much higher open rate than e-mail and more impact than a tweet.</p>
-<h3 id="did-this-help-">Did this help?</h3>
-<p>Thanks for checking out this tutorial! If you have any feedback
-to share with us, we&#39;d love to hear it.
-<a href="//www.twilio.com/help/contact">Contact support</a> to let us know what you think.</p>
+<h3 id="did-this-help-">Did this Help?</h3>
+<p>Thanks for checking out this tutorial! If you have any feedback to share with
+us, we&#39;d love to hear it. <a href="mailto:deved-oss@twilio.com">Contact the Twilio Developer Education
+Team</a> to let us know what you think.</p>
 </div></div>
 <div class="saurus-files" style="display:none;"><textarea class="saurus-file" data-file="app.rb" data-mode="ruby">cmVxdWlyZSAnc2luYXRyYS9iYXNlJwpyZXF1aXJlX3JlbGF0aXZlICcuL2xpYi9ub3RpZmllcicKCkVOVlsnUkFDS19FTlYnXSB8fD0gJ2RldmVsb3BtZW50JwoKcmVxdWlyZSAnYnVuZGxlcicKQnVuZGxlci5yZXF1aXJlIDpkZWZhdWx0LCBFTlZbJ1JBQ0tfRU5WJ10udG9fc3ltCgptb2R1bGUgU2VydmVyTm90aWZpY2F0aW9ucwogIGNsYXNzIEFwcCA8IFNpbmF0cmE6OkJhc2UKICAgIHNldCA6c2hvd19leGNlcHRpb25zLCBmYWxzZQogICAgc2V0IDpyYWlzZV9lcnJvcnMsIGZhbHNlCiAgICBzZXQgOnJvb3QsIEZpbGUuZGlybmFtZShfX0ZJTEVfXykKCiAgICBnZXQgJy8nIGRvCiAgICAgIHJhaXNlICJLYWJvb20hIFNvbWV0aGluZyB3ZW50IHdyb25nISIKICAgIGVuZAoKICAgIGVycm9yIGRvIHxleGNlcHRpb258CiAgICAgIE5vdGlmaWVyLnNlbmRfc21zX25vdGlmaWNhdGlvbnMoZXhjZXB0aW9uKQogICAgICAnQW4gZXJyb3IgaGFzIG9jdXJyZWQnCiAgICBlbmQKICBlbmQKZW5kCg==</textarea>
-<textarea class="saurus-file" data-file="lib/notifier.rb" data-mode="ruby">cmVxdWlyZSAneWFtbCcKcmVxdWlyZSAndHdpbGlvLXJ1YnknCgptb2R1bGUgTm90aWZpZXIKICBkZWYgc2VsZi5zZW5kX3Ntc19ub3RpZmljYXRpb25zKGUpCiAgICBhbGVydF9tZXNzYWdlID0gIltUaGlzIGlzIGEgdGVzdF0gQUxFUlQhIlwKICAgICAgIkl0IGFwcGVhcnMgdGhlIHNlcnZlciBpcyBoYXZpbmcgaXNzdWVzLiJcCiAgICAgICJFeGNlcHRpb246ICN7ZX0uIlwKICAgICAgIkdvIHRvOiBodHRwOi8vbmV3cmVsaWMuY29tIGZvciBtb3JlIGRldGFpbHMuIgogICAgaW1hZ2VfdXJsID0gImh0dHA6Ly9ob3d0b2RvY3MuczMuYW1hem9uYXdzLmNvbS9uZXctcmVsaWMtbW9uaXRvci5wbmciCiAgICBjbGllbnQgPSBUd2lsaW86OlJFU1Q6OkNsaWVudC5uZXcgRU5WWydUV0lMSU9fQUNDT1VOVF9TSUQnXSwgRU5WWydUV0lMSU9fQVVUSF9UT0tFTiddCgogICAgYWRtaW5fbGlzdCA9IFlBTUwubG9hZF9maWxlKCdjb25maWcvYWRtaW5pc3RyYXRvcnMueW1sJykKICAgIGFkbWluX2xpc3QuZWFjaCBkbyB8YWRtaW58CiAgICAgIHBob25lX251bWJlciA9IGFkbWluWydwaG9uZV9udW1iZXInXQogICAgICBzZW5kX3NtcyhjbGllbnQsIHBob25lX251bWJlciwgYWxlcnRfbWVzc2FnZSwgaW1hZ2VfdXJsKQogICAgZW5kCiAgZW5kCgogIGRlZiBzZWxmLnNlbmRfc21zKGNsaWVudCwgcGhvbmVfbnVtYmVyLCBhbGVydF9tZXNzYWdlLCBpbWFnZV91cmwpCiAgICB0d2lsaW9fbnVtYmVyID0gRU5WWydUV0lMSU9fTlVNQkVSJ10KICAgIG1lc3NhZ2UgPSBjbGllbnQuYWNjb3VudC5tZXNzYWdlcy5jcmVhdGUoCiAgICAgIGZyb206IHR3aWxpb19udW1iZXIsCiAgICAgIHRvOiBwaG9uZV9udW1iZXIsCiAgICAgIGJvZHk6IGFsZXJ0X21lc3NhZ2UsCiAgICAgIG1lZGlhX3VybDogaW1hZ2VfdXJsCiAgICApCiAgICBwdXRzICJBbiBTTVMgbm90aWZ5aW5nIHRoZSBsYXN0IGFwcGxpY2F0aW9uIGVycm9yIHdhcyAiXAogICAgICAgICAic2VudCB0byAje21lc3NhZ2UudG9bMC4uLi00XSArICIqKioqIn0iCiAgZW5kCgogIHByaXZhdGVfY2xhc3NfbWV0aG9kIDpzZW5kX3NtcwplbmQK</textarea>
-<textarea class="saurus-file" data-file="config/administrators.yml" data-mode="yaml">LQogIG5hbWU6IERvcmFqCiAgcGhvbmVfbnVtYmVyOiAnKzEyMzM0NDU2NzkwOTcnCi0KICBuYW1lOiBOaXZlawogIHBob25lX251bWJlcjogJysxMjMzNDQ1Njc5MDk4Jwo=</textarea>
+<textarea class="saurus-file" data-file="lib/notifier.rb" data-mode="ruby">cmVxdWlyZSAneWFtbCcKcmVxdWlyZSAndHdpbGlvLXJ1YnknCgptb2R1bGUgTm90aWZpZXIKICBkZWYgc2VsZi5zZW5kX3Ntc19ub3RpZmljYXRpb25zKGUpCiAgICBhbGVydF9tZXNzYWdlID0gIltUaGlzIGlzIGEgdGVzdF0gQUxFUlQhIlwKICAgICAgIkl0IGFwcGVhcnMgdGhlIHNlcnZlciBpcyBoYXZpbmcgaXNzdWVzLiJcCiAgICAgICJFeGNlcHRpb246ICN7ZX0uIlwKICAgICAgIkdvIHRvOiBodHRwOi8vbmV3cmVsaWMuY29tIGZvciBtb3JlIGRldGFpbHMuIgogICAgaW1hZ2VfdXJsID0gImh0dHA6Ly9ob3d0b2RvY3MuczMuYW1hem9uYXdzLmNvbS9uZXctcmVsaWMtbW9uaXRvci5wbmciCiAgICBjbGllbnQgPSBUd2lsaW86OlJFU1Q6OkNsaWVudC5uZXcgRU5WWydUV0lMSU9fQUNDT1VOVF9TSUQnXSwgRU5WWydUV0lMSU9fQVVUSF9UT0tFTiddCgogICAgYWRtaW5fbGlzdCA9IFlBTUwubG9hZF9maWxlKCdjb25maWcvYWRtaW5pc3RyYXRvcnMueW1sJykKICAgIGFkbWluX2xpc3QuZWFjaCBkbyB8YWRtaW58CiAgICAgIHBob25lX251bWJlciA9IGFkbWluWydwaG9uZV9udW1iZXInXQogICAgICBzZW5kX3NtcyhjbGllbnQsIHBob25lX251bWJlciwgYWxlcnRfbWVzc2FnZSwgaW1hZ2VfdXJsKQogICAgZW5kCiAgZW5kCgogIGRlZiBzZWxmLnNlbmRfc21zKGNsaWVudCwgcGhvbmVfbnVtYmVyLCBhbGVydF9tZXNzYWdlLCBpbWFnZV91cmwpCiAgICB0d2lsaW9fbnVtYmVyID0gRU5WWydUV0lMSU9fTlVNQkVSJ10KICAgIG1lc3NhZ2UgPSBjbGllbnQubWVzc2FnZXMuY3JlYXRlKAogICAgICBmcm9tOiAgICAgIHR3aWxpb19udW1iZXIsCiAgICAgIHRvOiAgICAgICAgcGhvbmVfbnVtYmVyLAogICAgICBib2R5OiAgICAgIGFsZXJ0X21lc3NhZ2UsCiAgICAgIG1lZGlhX3VybDogaW1hZ2VfdXJsCiAgICApCiAgICBwdXRzICJBbiBTTVMgbm90aWZ5aW5nIHRoZSBsYXN0IGFwcGxpY2F0aW9uIGVycm9yIHdhcyAiXAogICAgICAgICAic2VudCB0byAje21lc3NhZ2UudG9bMC4uLi00XSArICIqKioqIn0iCiAgZW5kCgogIHByaXZhdGVfY2xhc3NfbWV0aG9kIDpzZW5kX3NtcwplbmQK</textarea>
+<textarea class="saurus-file" data-file="config/administrators.yml" data-mode="yaml">LQogIG5hbWU6IERvcmFqCiAgcGhvbmVfbnVtYmVyOiAnKzE1NTU1Njc5MDk3JwotCiAgbmFtZTogTml2ZWsKICBwaG9uZV9udW1iZXI6ICcrMTU1NTU2NzkwOTgnCg==</textarea>
 </div>
 </div><div class="saurus-overview"><ul></ul></div></div><div class="saurus-code"><div class="file-path"><span class="crumb-container"></span><i class="fa fa-fw fa-folder"></i></div><div class="saurus-editor"></div></div><div class="saurus-explorer"><div class="saurus-file-list"></div><a href="https://github.com/TwilioDevEd/server-notifications-sinatra" target="_blank" class="explorer-get-code"> <i class="fa fa-lg fa-github-square"> </i>View Code on GitHub</a></div></div></div></div><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script><script src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script><script src="ace/ace.js"></script><script src="ace/theme-monokai.js"></script><script src="viewsaurus.js"></script></body></html>
