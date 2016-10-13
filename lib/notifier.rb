@@ -19,10 +19,10 @@ module Notifier
 
   def self.send_sms(client, phone_number, alert_message, image_url)
     twilio_number = ENV['TWILIO_NUMBER']
-    message = client.account.messages.create(
-      from: twilio_number,
-      to: phone_number,
-      body: alert_message,
+    message = client.messages.create(
+      from:      twilio_number,
+      to:        phone_number,
+      body:      alert_message,
       media_url: image_url
     )
     puts "An SMS notifying the last application error was "\
