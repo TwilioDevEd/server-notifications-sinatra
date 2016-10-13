@@ -20,7 +20,7 @@
       * [The Twilio Ruby Helper Library](//www.twilio.com/docs/ruby/install)
 
 
-  .step(data-file='lib/notifier.rb', data-highlight='11')
+  .step(data-file='lib/notifier.rb', data-highlight='9-13')
     :markdown
       ## Configure Twilio Client
 
@@ -51,14 +51,14 @@
       [Sinatra Errors Handlers](//github.com/sul-dlss/sdr-services-app/blob/master/Sinatra-error-handling.md).
       We will also make all the Twilio API calls from here.
 
-  .step(data-file='lib/notifier.rb', data-highlight='13-17')
+  .step(data-file='lib/notifier.rb', data-highlight='22-26')
     :markdown
       ## Trigger Notifications for Administrators List
 
       In our `Notifier` module, we read the administrators from our YAML file
       and send alert messages to each one of them with the method `send_sms`.
 
-  .step(data-file='lib/notifier.rb', data-highlight='20-30')
+  .step(data-file='lib/notifier.rb', data-highlight='31-38')
     :markdown
       ## Send a Text Message
 
