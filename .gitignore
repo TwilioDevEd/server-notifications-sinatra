@@ -30,3 +30,4 @@ build/
 
 .rvmrc
 .env
+.ruby-version
