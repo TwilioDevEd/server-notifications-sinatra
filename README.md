@@ -19,14 +19,14 @@ This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
 1. First clone this repository and `cd` into it.
 
    ```bash
-   $ git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
-   $ cd  server-notifications-sinatra
+   git clone git@github.com:TwilioDevEd/server-notifications-sinatra.git
+   cd  server-notifications-sinatra
    ```
 
 1. Install the dependencies.
 
    ```bash
-   $ bundle install
+   bundle install
    ```
 
 1. Copy the `.env.example` file to `.env`, and edit it including your credentials
@@ -41,13 +41,13 @@ This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
 1. Make sure the tests succeed.
 
    ```bash
-   $ bundle exec rake
+   bundle exec rake
    ```
 
 1. Start the development server:
 
-   ```
-   $ bundle exec rakeup
+   ```bash
+   bundle exec rakeup
    ```
 
 1. Check it out at [`http://localhost:9292`](http://localhost:9292).
