@@ -29,3 +29,5 @@ build/
 /lib/bundler/man/
 
 .rvmrc
+.env
+.ruby-version

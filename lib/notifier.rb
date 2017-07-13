@@ -1,33 +1,39 @@
 require 'yaml'
 require 'twilio-ruby'
 
-module Notifier
+class Notifier
   def self.send_sms_notifications(e)
-    alert_message = "[This is a test] ALERT!"\
-      "It appears the server is having issues."\
-      "Exception: #{e}."\
-      "Go to: http://newrelic.com for more details."
-    image_url = "http://howtodocs.s3.amazonaws.com/new-relic-monitor.png"
-    client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+    new.send_sms_notifications(e)
+  end
 
-    admin_list = YAML.load_file('config/administrators.yml')
-    admin_list.each do |admin|
+  def initialize
+    account_sid = ENV['TWILIO_ACCOUNT_SID']
+    auth_token  = ENV['TWILIO_AUTH_TOKEN']
+    @client = Twilio::REST::Client.new(account_sid, auth_token)
+  end
+
+  def send_sms_notifications(e)
+    alert_message = '[This is a test] ALERT!' \
+      'It appears the server is having issues.' \
+      "Exception: #{e}." \
+      'Go to: http://newrelic.com for more details.'
+    image_url = 'http://howtodocs.s3.amazonaws.com/new-relic-monitor.png'
+
+    admins = YAML.load_file('config/administrators.yml')
+    admins.each do |admin|
       phone_number = admin['phone_number']
-      send_sms(client, phone_number, alert_message, image_url)
+      send_sms(phone_number, alert_message, image_url)
     end
   end
 
-  def self.send_sms(client, phone_number, alert_message, image_url)
-    twilio_number = ENV['TWILIO_NUMBER']
-    message = client.account.messages.create(
-      from: twilio_number,
-      to: phone_number,
-      body: alert_message,
+  private
+
+  def send_sms(phone_number, alert_message, image_url)
+    @client.messages.create(
+      from:      ENV['TWILIO_NUMBER'],
+      to:        phone_number,
+      body:      alert_message,
       media_url: image_url
     )
-    puts "An SMS notifying the last application error was "\
-         "sent to #{message.to[0...-4] + "****"}"
   end
-
-  private_class_method :send_sms
 end
