@@ -6,7 +6,7 @@ gem 'twilio-ruby', '>= 5.0.0'
 
 group :test, :development do
   gem 'rspec'
-  gem 'capybara'
+  gem 'capybara', '>= 2.10.1'
 end
 
 group :test do
