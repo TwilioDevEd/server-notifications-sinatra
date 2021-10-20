@@ -4,7 +4,7 @@
 
 # Server notifications with Twilio, Ruby and Sinatra
 
-[![Build Status](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra.svg?branch=master)](https://travis-ci.org/TwilioDevEd/server-notifications-sinatra)
+[![Build and test](https://github.com/TwilioDevEd/server-notifications-sinatra/actions/workflows/build_test.yml/badge.svg)](https://github.com/TwilioDevEd/server-notifications-sinatra/actions/workflows/build_test.yml)
 
 SMS notifications are a great way to alert humans quickly when important events
 happen. In this example, we'll show you how to send SMS notifications to a list
