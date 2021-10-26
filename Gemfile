@@ -1,6 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
+gem 'dotenv'
 gem 'sinatra'
 gem 'twilio-ruby', '>= 5.0.0'
 

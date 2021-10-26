@@ -1,10 +1,18 @@
-require 'sinatra/base'
+require 'dotenv'
+require 'sinatra'
 require_relative './lib/notifier'
 
-ENV['RACK_ENV'] ||= 'development'
+# Load environment configuration
+Dotenv.load
+
+# Set the environment after dotenv loads
+# Default to production
+environment = (ENV['APP_ENV'] || ENV['RACK_ENV'] || :production).to_sym
+set :environment, environment
 
 require 'bundler'
-Bundler.require :default, ENV['RACK_ENV'].to_sym
+Bundler.require :default, environment
+
 
 module ServerNotifications
   class App < Sinatra::Base
