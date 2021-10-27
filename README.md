@@ -12,7 +12,7 @@ of people when an error happens in a web application.
 
 [Read the full tutorial here!](https://www.twilio.com/docs/tutorials/walkthrough/server-notifications/ruby/sinatra)
 
-## Local development
+## Get started
 
 This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
 
@@ -33,8 +33,6 @@ This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
    for the Twilio API (found at https://www.twilio.com/console/account/settings).
    You will also need a [Twilio Number](https://www.twilio.com/console/phone-numbers/incoming).
 
-   Run `source .env` to export the environment variables.
-
 1. Edit the administrators listed in the [`config/administrators.yml`](config/administrators.yml).
    Make sure to use real phone numbers otherwise the application won't work.
 
@@ -51,6 +49,14 @@ This project is built using [Sinatra](http://www.sinatrarb.com/) Framework.
    ```
 
 1. Check it out at [`http://localhost:9292`](http://localhost:9292).
+
+### Configure Development vs Production Settings
+
+By default, this application will run in production mode - stack traces will not be visible in the web browser. If you would like to run this application in development locally, change the `APP_ENV` variable in your `.env` file.
+
+`APP_ENV=development`
+
+For more about development vs production, visit [Sinatra's configuration page](http://sinatrarb.com/configuration.html).
 
 ## Meta
 
