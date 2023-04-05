@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem 'dotenv'
-gem 'sinatra'
+gem 'sinatra', '>= 2.2.3'
 gem 'twilio-ruby', '>= 5.0.0'
 
 group :test, :development do
@@ -11,6 +11,6 @@ group :test, :development do
 end
 
 group :test do
-  gem 'rake'
+  gem 'rake', '>= 12.3.3'
   gem 'rack-test'
 end
