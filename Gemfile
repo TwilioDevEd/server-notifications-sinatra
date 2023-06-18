@@ -2,7 +2,7 @@
 source "https://rubygems.org"
 
 gem 'dotenv'
-gem 'sinatra'
+gem 'sinatra', '>= 2.2.3'
 gem 'twilio-ruby', '>= 5.0.0'
 
 group :test, :development do
